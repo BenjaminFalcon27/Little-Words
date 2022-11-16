@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-//Polo
-//Gogo
 void main() {
   runApp(const MyApp());
 }
