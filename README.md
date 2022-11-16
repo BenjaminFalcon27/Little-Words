@@ -4,7 +4,7 @@ Equip C
 
 ## Members
 
-### Benjamin
-### Paul Delacre
-### Maxime Van Eygen El Golem
-Hello world
+### Benjamin TROLAIS
+### Paul DELACRE
+### Maxime VAN EYGEN
+
