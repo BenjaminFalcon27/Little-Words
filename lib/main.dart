@@ -1,35 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:little_words/home/home.view.dart';
 import 'package:location/location.dart';
 import 'package:geolocator/geolocator.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: MyApp(),
-  ));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-class _MyAppState extends State<MyApp> {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: Column(
-            children: [
-              Flexible(
-                  child: FlutterMap(
-                options: MapOptions(zoom: 8),
-              ))
-            ],
-          ),
-        ),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const HomeView(),
     );
   }
 }
