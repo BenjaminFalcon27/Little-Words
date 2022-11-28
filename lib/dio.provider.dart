@@ -1,9 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
-
-import 'package:dio/dio.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:little_words/up.response.dart';
 
 final dioProvider = Provider<Dio>((ref) {
