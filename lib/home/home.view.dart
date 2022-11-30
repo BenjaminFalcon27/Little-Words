@@ -23,6 +23,13 @@ class HomeView extends ConsumerWidget {
           ],
         )),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          //TODO Ajouter code pour ouvrir sac
+        },
+        backgroundColor: Theme.of(context).primaryColor,
+        child: const Icon(Icons.backpack),
+      ),
     );
   }
 }
