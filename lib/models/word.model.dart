@@ -1,9 +1,9 @@
 class Word {
   final int? uid;
-  final String? author;
-  final String? content;
-  final String? latitude;
-  final String? longitude;
+  final String author;
+  final String content;
+  final String latitude;
+  final String longitude;
 
   const Word({
     required this.uid,
