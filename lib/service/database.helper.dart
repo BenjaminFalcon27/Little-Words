@@ -10,7 +10,7 @@ class DatabaseHelper {
   static Future<Database> _getDB() async {
     return openDatabase(join(await getDatabasesPath(), _dbName),
         onCreate: (db, version) async => await db.execute(
-            "CREATE TABLE LittleWords (uid INTEGER PRIMARY KEY, author TEXT NOT NULL, context TEXT NOT NULL, longitude TEXT NOT NULL, latitude TEXT NOT NULL);"),
+            "CREATE TABLE LittleWords (`uid` INTEGER PRIMARY KEY AUTOINCREMENT, `author` TEXT NOT NULL, `content` TEXT NOT NULL, `longitude` TEXT NOT NULL, `latitude` TEXT NOT NULL);"),
         version: _version);
   }
 
@@ -25,7 +25,7 @@ class DatabaseHelper {
   static Future<List<Word>?> getAllWord() async {
     final db = await _getDB();
 
-    final List<Map<String, dynamic>> maps = await db.query("Decorations");
+    final List<Map<String, dynamic>> maps = await db.query("LittleWords");
 
     if (maps.isEmpty) {
       return null;

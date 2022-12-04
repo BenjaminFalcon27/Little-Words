@@ -16,8 +16,8 @@ class WordScreen extends StatelessWidget {
     if (word != null) {
       authorController.text = word!.author;
       contentController.text = word!.content;
-      latitudeController.text = word!.latitude;
-      longitudeController.text = word!.longitude;
+      latitudeController.text = word!.latitude!;
+      longitudeController.text = word!.longitude!;
     }
 
     return Scaffold(
@@ -54,8 +54,8 @@ class WordScreen extends StatelessWidget {
             TextFormField(
               controller: contentController,
               decoration: const InputDecoration(
-                  hintText: 'Numéro',
-                  labelText: 'Numéro décoration',
+                  hintText: 'Contenu',
+                  labelText: 'Contenu',
                   border: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.white,
@@ -86,11 +86,11 @@ class WordScreen extends StatelessWidget {
                       }
 
                       final Word model = Word(
+                          uid: 1,
                           author: author,
                           content: content,
-                          uid: word?.uid,
-                          longitude: longitude,
-                          latitude: latitude);
+                          longitude: '1.0',
+                          latitude: '1.0');
                       if (word == null) {
                         await DatabaseHelper.addWord(model);
                       } else {
