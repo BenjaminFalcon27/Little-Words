@@ -86,6 +86,7 @@ class WordScreen extends StatelessWidget {
                       }
 
                       final Word model = Word(
+                          id: word?.id,
                           uid: 1,
                           author: author,
                           content: content,

@@ -10,7 +10,7 @@ class DatabaseHelper {
   static Future<Database> _getDB() async {
     return openDatabase(join(await getDatabasesPath(), _dbName),
         onCreate: (db, version) async => await db.execute(
-            "CREATE TABLE LittleWords (`uid` INTEGER PRIMARY KEY AUTOINCREMENT, `author` TEXT NOT NULL, `content` TEXT NOT NULL, `longitude` TEXT NOT NULL, `latitude` TEXT NOT NULL);"),
+            "CREATE TABLE LittleWords ('id' INTEGER PRIMARY KEY, 'uid' INTEGER, 'author' TEXT NOT NULL, 'content' TEXT NOT NULL, 'longitude' TEXT NOT NULL, 'latitude' TEXT NOT NULL);"),
         version: _version);
   }
 
@@ -38,8 +38,8 @@ class DatabaseHelper {
   static Future<int> updateDeco(Word word) async {
     final db = await _getDB();
     return await db.update("LittleWords", word.toJson(),
-        where: "uid= ?",
-        whereArgs: [word.uid],
+        where: "id= ?",
+        whereArgs: [word.id],
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
@@ -48,8 +48,8 @@ class DatabaseHelper {
     final db = await _getDB();
     return await db.delete(
       "LittleWords",
-      where: "uid= ?",
-      whereArgs: [word.uid],
+      where: "id= ?",
+      whereArgs: [word.id],
     );
   }
 }

@@ -1,4 +1,5 @@
 class Word {
+  final int? id;
   final int? uid;
   final String author;
   final String content;
@@ -6,6 +7,7 @@ class Word {
   final String? longitude;
 
   const Word({
+    required this.id,
     required this.uid,
     required this.author,
     required this.content,
@@ -14,6 +16,7 @@ class Word {
   });
 
   factory Word.fromJson(Map<String, dynamic> json) => Word(
+        id: json['id'],
         uid: json['uid'],
         author: json['author'],
         content: json['content'],
@@ -22,6 +25,7 @@ class Word {
       );
 
   Map<String, dynamic> toJson() => {
+        'id': id,
         'uid': uid,
         'author': author,
         'content': content,
