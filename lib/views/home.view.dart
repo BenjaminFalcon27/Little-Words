@@ -4,6 +4,8 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:latlong2/latlong.dart';
 
+import 'words.view.dart';
+
 class HomeView extends ConsumerWidget {
   const HomeView({Key? key}) : super(key: key);
 
@@ -24,7 +26,9 @@ class HomeView extends ConsumerWidget {
         )),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
+        onPressed: () async {
+          await Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const WordsScreen()));
           //TODO Ajouter code pour ouvrir sac
         },
         backgroundColor: Theme.of(context).primaryColor,

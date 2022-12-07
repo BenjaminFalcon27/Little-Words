@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/word.model.dart';
 import '../service/database.helper.dart';
 import '../widgets/word.widget.dart';
-import 'word.screen.dart';
+import 'word.view.dart';
 
 class WordsScreen extends StatefulWidget {
   const WordsScreen({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _WordsScreenState extends State<WordsScreen> {
     return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
-          title: const Text('Mots'),
+          title: const Text('Sac à mots'),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
