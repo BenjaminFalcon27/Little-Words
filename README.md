@@ -5,6 +5,6 @@ Equip C
 ## Members
 
 ### Benjamin TROLAIS
-### Paul DELACRE
+### Paul DELACRE (Dangereux criminel)
 ### Maxime VAN EYGEN
 
