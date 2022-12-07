@@ -64,7 +64,7 @@ class _WordsScreenState extends State<WordsScreen> {
                                           MaterialStateProperty.all(
                                               Colors.red)),
                                   onPressed: () async {
-                                    await DatabaseHelper.deleteDeco(
+                                    await DatabaseHelper.deleteWord(
                                         snapshot.data![index]);
                                     // ignore: use_build_context_synchronously
                                     Navigator.pop(context);

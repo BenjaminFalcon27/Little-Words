@@ -95,7 +95,7 @@ class WordScreen extends StatelessWidget {
                       if (word == null) {
                         await DatabaseHelper.addWord(model);
                       } else {
-                        await DatabaseHelper.updateDeco(model);
+                        await DatabaseHelper.updateWord(model);
                       }
 
                       // ignore: use_build_context_synchronously

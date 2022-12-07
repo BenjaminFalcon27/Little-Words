@@ -35,7 +35,7 @@ class DatabaseHelper {
   }
 
   //* UPDATE
-  static Future<int> updateDeco(Word word) async {
+  static Future<int> updateWord(Word word) async {
     final db = await _getDB();
     return await db.update("LittleWords", word.toJson(),
         where: "id= ?",
@@ -44,7 +44,7 @@ class DatabaseHelper {
   }
 
   //* DELETE
-  static Future<int> deleteDeco(Word word) async {
+  static Future<int> deleteWord(Word word) async {
     final db = await _getDB();
     return await db.delete(
       "LittleWords",
