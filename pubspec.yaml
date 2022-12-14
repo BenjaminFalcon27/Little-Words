@@ -50,6 +50,8 @@ dependencies:
   geolocator: ^9.0.2
   flutter_lints: ^2.0.1
   flutter_native_splash: ^2.2.16
+  flutter_map_location_marker: ^5.0.0
+  tuple: ^2.0.1
 
 flutter_native_splash:
   image: assets/LittleWords.png
