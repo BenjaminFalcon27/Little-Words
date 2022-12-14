@@ -50,6 +50,7 @@ dependencies:
   geolocator: ^9.0.2
   flutter_lints: ^2.0.1
   flutter_native_splash: ^2.2.16
+  flutter_swipe_action_cell: ^3.0.4
 
 flutter_native_splash:
   image: assets/LittleWords.png

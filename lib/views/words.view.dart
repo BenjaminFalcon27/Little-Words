@@ -39,9 +39,10 @@ class _WordsScreenState extends State<WordsScreen> {
             } else if (snapshot.hasData) {
               if (snapshot.data != null) {
                 return ListView.builder(
+                  itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) => WordWidget(
                     word: snapshot.data![index],
-                    onTap: () async {
+                      onTap: () async {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -50,6 +51,7 @@ class _WordsScreenState extends State<WordsScreen> {
                                   )));
                       setState(() {});
                     },
+
                     onLongPress: () async {
                       showDialog(
                           context: context,
@@ -81,7 +83,6 @@ class _WordsScreenState extends State<WordsScreen> {
                           });
                     },
                   ),
-                  itemCount: snapshot.data!.length,
                 );
               }
               return const Center(
