@@ -18,4 +18,7 @@ class WordDTO {
 
   factory WordDTO.fromJson(Map<String, dynamic> json) =>
       _$WordDTOFromJson(json);
+
+  // Créer un word dto avec le résultat d'une requête SqlLite
+  static fromResultSet(Map<String, dynamic> map) => WordDTO.fromJson(map);
 }

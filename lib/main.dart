@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:little_words/views/home.view.dart';
 import 'package:little_words/themes/colors.dart';
+import 'package:little_words/widgets/pseudo.widget.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -14,9 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'LittleWords',
       theme: MyTheme.defaultTheme,
-      home: const HomeView(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("LittleWords"),
+        ),
+        body: const PseudoWidget(),
+      ),
     );
   }
 }
