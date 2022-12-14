@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_swipe_action_cell/flutter_swipe_action_cell.dart';
 import '../models/word.model.dart';
 
 class WordWidget extends StatelessWidget {
