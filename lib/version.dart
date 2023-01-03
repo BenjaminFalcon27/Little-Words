@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:little_words/dio.provider.dart';
+import 'package:little_words/providers/dio.provider.dart';
 
 class Version extends ConsumerWidget {
   const Version({super.key});

@@ -1,10 +1,12 @@
+import 'dart:async';
+
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../models/word.model.dart';
 
 class DatabaseHelper {
-  static const int _version = 1;
+  static const int _version = 2;
   static const String _dbName = "LittleWords.db";
 
   static Future<Database> _getDB() async {
@@ -14,14 +16,14 @@ class DatabaseHelper {
         version: _version);
   }
 
-  //* CREATE
+  //* CREATE WORD
   static Future<int> addWord(Word word) async {
     final db = await _getDB();
     return await db.insert("LittleWords", word.toJson(),
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
-  //* READ
+  //* READ WORD
   static Future<List<Word>?> getAllWord() async {
     final db = await _getDB();
 
@@ -34,7 +36,7 @@ class DatabaseHelper {
     return List.generate(maps.length, (index) => Word.fromJson(maps[index]));
   }
 
-  //* UPDATE
+  //* UPDATE WORD
   static Future<int> updateWord(Word word) async {
     final db = await _getDB();
     return await db.update("LittleWords", word.toJson(),
@@ -43,7 +45,7 @@ class DatabaseHelper {
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
-  //* DELETE
+  //* DELETE WORD
   static Future<int> deleteWord(Word word) async {
     final db = await _getDB();
     return await db.delete(
