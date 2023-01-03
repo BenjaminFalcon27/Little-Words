@@ -1,19 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
-import 'package:tuple/tuple.dart';
-
-import '../dto/word.dto.dart';
+import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 
 class LittlewordsMap extends StatelessWidget {
   LittlewordsMap({Key? key}) : super(key: key);
 
   final _mapController = MapController();
 
-  Location location = Location();
+  Location location = new Location();
 
   late bool _serviceEnabled;
   late PermissionStatus _permissionGranted;
@@ -49,22 +47,8 @@ class LittlewordsMap extends StatelessWidget {
           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
           userAgentPackageName: 'dev.fleaflet.flutter_map.example',
         ),
+        CurrentLocationLayer()
       ],
     );
   }
 }
-
-// class WordsAroundMarkerLayer extends ConsumerWidget {
-//     const WordsAroundMarkerLayer({Key? key}) : super(key: key);
-
-//     @override
-//     Widget build(BuildContext context, WidgetRef ref){
-//       return ref.watch(wordsAroundProvider).map(data: (data){
-//         return Text('data ${data.value}');
-//       }, error: (error){
-//         return Text('error : $error');
-//       } ,loading: (loading){
-//         return const CircularProgressIndicator();
-//       });
-//     }
-//   }

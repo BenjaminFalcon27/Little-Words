@@ -54,6 +54,7 @@ dependencies:
   tuple: ^2.0.1
   flutter_swipe_action_cell: ^3.0.4
   swipe: ^0.0.1
+  flutter_speed_dial: ^6.2.0
 
 flutter_native_splash:
   image: assets/LittleWords.png
