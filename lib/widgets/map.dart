@@ -1,8 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
-import 'package:tuple/tuple.dart';
+import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 
 class LittlewordsMap extends StatelessWidget {
   LittlewordsMap({Key? key}) : super(key: key);
@@ -15,7 +17,7 @@ class LittlewordsMap extends StatelessWidget {
   late PermissionStatus _permissionGranted;
   late LocationData _locationData;
 
-  Future<dynamic> getLocation() async{
+  Future<dynamic> getLocation() async {
     _serviceEnabled = await location.serviceEnabled();
     if (!_serviceEnabled) _serviceEnabled = await location.requestService();
 
@@ -32,20 +34,21 @@ class LittlewordsMap extends StatelessWidget {
     return FlutterMap(
       options: MapOptions(
           zoom: 18.0,
-          onMapReady: (){
+          onMapReady: () {
             getLocation().then((value) {
-              _mapController.move(LatLng(value.latitude, value.longitude), 18.0);
+              _mapController.move(
+                  LatLng(value.latitude, value.longitude), 18.0);
               print(value);
             });
-          }
-          ),
+          }),
       mapController: _mapController,
       children: [
-      TileLayer(
-        urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-        userAgentPackageName: 'dev.fleaflet.flutter_map.example',
-    ),
-    ],
+        TileLayer(
+          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+          userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+        ),
+        CurrentLocationLayer()
+      ],
     );
   }
 }
