@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:little_words/views/home.view.dart';
 import 'package:little_words/themes/colors.dart';
-import 'package:little_words/widgets/pseudo.widget.dart';
 import 'package:location/location.dart';
 
 void main() {
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text("LittleWords"),
         ),
-        body: const PseudoWidget(),
+        body: const HomeView(),
       ),
     );
   }
