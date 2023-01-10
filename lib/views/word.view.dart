@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:little_words/models/word.model.dart';
 import 'package:little_words/service/database.helper.dart';
+import 'package:little_words/widgets/user.widget.dart';
 
 class WordScreen extends StatelessWidget {
   final Word? word;
@@ -9,6 +10,9 @@ class WordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authorController = TextEditingController();
+    UserWidget.getUserName().then((username) {
+      authorController.text = username;
+    });
     final contentController = TextEditingController();
     final latitudeController = TextEditingController();
     final longitudeController = TextEditingController();
@@ -16,8 +20,8 @@ class WordScreen extends StatelessWidget {
     if (word != null) {
       authorController.text = word!.author;
       contentController.text = word!.content;
-      latitudeController.text = word!.latitude!;
-      longitudeController.text = word!.longitude!;
+      latitudeController.text = word!.latitude.toString();
+      longitudeController.text = word!.longitude.toString();
     }
 
     return Scaffold(
@@ -31,25 +35,6 @@ class WordScreen extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.only(bottom: 40),
-              child: Center(),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 40.0),
-              child: TextFormField(
-                controller: authorController,
-                maxLines: 1,
-                decoration: const InputDecoration(
-                    hintText: 'Auteur',
-                    labelText: 'Nom auteur',
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.white,
-                          width: 0.75,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10.0),
-                        ))),
-              ),
             ),
             TextFormField(
               controller: contentController,
@@ -78,6 +63,7 @@ class WordScreen extends StatelessWidget {
                     onPressed: () async {
                       final author = authorController.value.text;
                       final content = contentController.value.text;
+                      //TODO: get location
                       final longitude = longitudeController.value.text;
                       final latitude = latitudeController.value.text;
 
@@ -90,8 +76,9 @@ class WordScreen extends StatelessWidget {
                           uid: 1,
                           author: author,
                           content: content,
-                          longitude: '1.0',
-                          latitude: '1.0');
+                          //TODO: get location
+                          longitude: 1.0,
+                          latitude: 1.0);
                       if (word == null) {
                         await DatabaseHelper.addWord(model);
                       } else {

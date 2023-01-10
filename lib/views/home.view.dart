@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:little_words/views/word.view.dart';
-import 'package:little_words/widgets/map.dart';
-import 'package:location/location.dart';
+import 'package:little_words/widgets/map.widget.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 import 'words.view.dart';
@@ -38,7 +37,7 @@ class HomeView extends ConsumerWidget {
               labelBackgroundColor: const Color(0xFF801E48)),
           // FAB 2
           SpeedDialChild(
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
               backgroundColor: Theme.of(context).primaryColor,
               onTap: () async {
                 await Navigator.push(
@@ -56,23 +55,4 @@ class HomeView extends ConsumerWidget {
       ),
     );
   }
-}
-
-Location location = new Location();
-
-late bool _serviceEnabled;
-late PermissionStatus _permissionGranted;
-late LocationData _locationData;
-
-Future<dynamic> getLocation() async {
-  _serviceEnabled = await location.serviceEnabled();
-  if (!_serviceEnabled) _serviceEnabled = await location.requestService();
-
-  _permissionGranted = await location.hasPermission();
-  if (_permissionGranted == PermissionStatus.denied) {
-    _permissionGranted = await location.requestPermission();
-  }
-
-  _locationData = await location.getLocation();
-  return _locationData;
 }

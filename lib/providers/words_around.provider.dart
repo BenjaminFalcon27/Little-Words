@@ -2,13 +2,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlong2/latlong.dart';
-import 'device_location.provider.dart';
+import 'device.location.provider.dart';
 import 'dio.provider.dart';
 import '../dto/word.dto.dart';
 import '../dto/words.dto.dart';
-import 'dio.provider.dart';
 
 final wordsAroundProvider = FutureProvider<List<WordDTO>>((ref) async {
   AsyncValue<LatLng?> location = ref.watch(deviceLocationProvider);

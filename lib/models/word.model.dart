@@ -3,8 +3,8 @@ class Word {
   final int? uid;
   final String author;
   final String content;
-  final String? latitude;
-  final String? longitude;
+  final double latitude;
+  final double longitude;
 
   const Word({
     required this.id,

@@ -6,6 +6,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 
+// ignore: must_be_immutable
 class LittlewordsMap extends StatelessWidget {
   LittlewordsMap({Key? key}) : super(key: key);
 
