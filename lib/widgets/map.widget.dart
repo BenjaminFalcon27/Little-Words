@@ -35,6 +35,9 @@ class LittlewordsMap extends StatelessWidget {
     return FlutterMap(
       options: MapOptions(
           zoom: 18.0,
+          maxZoom: 18.0,
+          minZoom: 17.0,
+          interactiveFlags: InteractiveFlag.all & ~InteractiveFlag.drag & ~InteractiveFlag.pinchMove & ~InteractiveFlag.flingAnimation,
           onMapReady: () {
             getLocation().then((value) {
               _mapController.move(
