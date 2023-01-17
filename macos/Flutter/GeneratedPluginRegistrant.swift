@@ -7,7 +7,7 @@ import Foundation
 
 import geolocator_apple
 import location
-import shared_preferences_macos
+import shared_preferences_foundation
 import sqflite
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
