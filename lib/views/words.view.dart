@@ -105,7 +105,9 @@ class _WordsScreenState extends State<WordsScreen> {
                                             snapshot.data![index].id!)
                                         .then((value) async => {
                                               await dioClient.throwWord(
-                                                  word: value!),
+                                                  word: value!,
+                                                  uid: snapshot.data![index].id!
+                                                      .toString()),
                                               Navigator.pop(context),
                                               setState(() {})
                                             });

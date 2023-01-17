@@ -10,6 +10,7 @@ import '../dto/words.dto.dart';
 
 final wordsAroundProvider = FutureProvider<List<WordDTO>>((ref) async {
   AsyncValue<LatLng?> location = ref.watch(deviceLocationProvider);
+
   return location.map(data: (data) async {
     print(
         'try to get words around ${data.value!.latitude} ${data.value!.longitude}');
@@ -22,8 +23,11 @@ final wordsAroundProvider = FutureProvider<List<WordDTO>>((ref) async {
 
     final WordsDTO wordsDTO = WordsDTO.fromJson(json);
     if (wordsDTO.data == null) {
+      print('wordsDTO.data is null');
       return Future.value([]);
     }
+    print('wordsDTO.data is not null');
+
     return Future.value(wordsDTO.data!);
   }, error: (error) {
     print(error);

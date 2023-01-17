@@ -43,7 +43,7 @@ class DatabaseHelper {
     final db = await _getDB();
 
     final List<Map<String, dynamic>> maps =
-        await db.query("LittleWords", where: "id= ?", whereArgs: [id]);
+        await db.query("LittleWords", where: "uid= ?", whereArgs: [id]);
 
     if (maps.isEmpty) {
       return null;

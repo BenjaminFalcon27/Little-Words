@@ -19,7 +19,7 @@ class WordsAroundMarkerLayer extends ConsumerWidget {
   Widget _onData(List<WordDTO> words) {
     final List<Marker> markers = <Marker>[];
     for (final WordDTO w in words) {
-      var wordPosition = LatLng(w.latitude, w.longitude);
+      var wordPosition = LatLng(w.latitude!, w.longitude!);
       markers.add(Marker(
           point: wordPosition,
           builder: (context) {
@@ -44,6 +44,8 @@ class WordsAroundMarkerLayer extends ConsumerWidget {
       onTap: () {
         print('tapped');
       },
+      child: const Icon(Icons.message_rounded,
+          color: Colors.purpleAccent, size: 30.0),
     );
   }
 }

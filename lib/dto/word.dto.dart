@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import "package:freezed_annotation/freezed_annotation.dart";
+import 'package:little_words/models/word.model.dart';
 
 part 'word.dto.g.dart';
 
@@ -11,8 +12,8 @@ class WordDTO {
   final int? uid;
   final String? author;
   final String? content;
-  final double latitude;
-  final double longitude;
+  final double? latitude;
+  final double? longitude;
 
   Map<String, dynamic> toJson() => _$WordDTOToJson(this);
 
@@ -21,4 +22,14 @@ class WordDTO {
 
   // Créer un word dto avec le résultat d'une requête SqlLite
   static fromResultSet(Map<String, dynamic> map) => WordDTO.fromJson(map);
+
+  static Future<WordDTO> fromModel(Word wordToThrow) {
+    return Future.value(WordDTO(
+      wordToThrow.uid,
+      wordToThrow.author,
+      wordToThrow.content,
+      wordToThrow.latitude,
+      wordToThrow.longitude,
+    ));
+  }
 }

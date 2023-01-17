@@ -10,8 +10,8 @@ WordDTO _$WordDTOFromJson(Map<String, dynamic> json) => WordDTO(
       json['uid'] as int?,
       json['author'] as String?,
       json['content'] as String?,
-      (json['latitude'] as num).toDouble(),
-      (json['longitude'] as num).toDouble(),
+      (json['latitude'] as num?)?.toDouble(),
+      (json['longitude'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$WordDTOToJson(WordDTO instance) => <String, dynamic>{
