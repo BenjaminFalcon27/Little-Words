@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
-
 import '../models/word.model.dart';
 import '../service/database.helper.dart';
 import '../widgets/user.widget.dart';
@@ -23,6 +22,7 @@ class _WordsScreenState extends State<WordsScreen> {
     return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
+          backgroundColor: Theme.of(context).primaryColor,
           title: FutureBuilder(
             future: UserWidget.getUserName(), // fonction qui retourne un Future
             builder: (context, snapshot) {
@@ -46,6 +46,7 @@ class _WordsScreenState extends State<WordsScreen> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Theme.of(context).primaryColor,
           onPressed: () async {
             await Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const WordScreen()));

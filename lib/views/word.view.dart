@@ -26,6 +26,7 @@ class WordScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text(word == null ? 'Créer un mot' : 'Editer un mot'),
         centerTitle: true,
       ),
@@ -89,6 +90,11 @@ class WordScreen extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                              (Set<MaterialState> states) {
+                              return Theme.of(context).primaryColor.withOpacity(0.5);
+                          },
+                        ),
                         shape: MaterialStateProperty.all(
                             const RoundedRectangleBorder(
                                 side: BorderSide(

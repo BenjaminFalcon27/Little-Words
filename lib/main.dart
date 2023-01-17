@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.defaultTheme,
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Theme.of(context).primaryColor,
           title: const Text("LittleWords"),
         ),
         body: const FormView(),

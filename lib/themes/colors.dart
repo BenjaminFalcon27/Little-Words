@@ -25,6 +25,10 @@ class MyTheme {
         buttonColor: secondaryColor,
         textTheme: ButtonTextTheme.primary,
       ),
+
+      appBarTheme: base.appBarTheme.copyWith(
+        backgroundColor: primaryColor,
+      )
     );
   }
 }
