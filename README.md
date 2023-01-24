@@ -43,9 +43,9 @@ You can also create your own words and throw them on the map.
 
 Thanks for reading, have fun !
 
-### Instructions for the teacher
+## Instructions for the teacher
 
-## Webservices
+### Webservices
 
 - [x] **GET** Back is up (done)
 
@@ -57,7 +57,7 @@ Thanks for reading, have fun !
 
 - [x] **GET** All words (done)
 
-## Requirements
+### Requirements
 
 - [x] Words are stored in a database (Sqlite)
 - [x] Use Riverpod for state management
