@@ -42,7 +42,7 @@ class WordsAroundMarkerLayer extends ConsumerWidget {
   GestureDetector _WordMarkerContent(WordDTO w) {
     return GestureDetector(
       onTap: () {
-        print('tapped');
+        print(w.uid);
       },
       child: const Icon(Icons.message_rounded,
           color: Colors.purpleAccent, size: 30.0),

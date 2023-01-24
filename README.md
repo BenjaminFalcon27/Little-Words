@@ -14,9 +14,9 @@ Littlewords is a school project in group of 3 people that we realized during our
 
 It's a game where you have to find words around you like in the game Pokemon Go.
 
-|        Pokemon Go        |        Littlewords        |
-| :----------------------: | :-----------------------: |
-| ![](https://...Dark.png) | ![](https://...Ocean.png) |
+|               Pokemon Go               |               Littlewords                |
+| :------------------------------------: | :--------------------------------------: |
+| ![](./github/images/map-pokemongo.png) | ![](./github/images/map-littlewords.png) |
 
 Words that you find are added to your bag and you can throw them to another place where other players can find them.
 
@@ -42,3 +42,26 @@ You can also create your own words and throw them on the map.
 - Run the project
 
 Thanks for reading, have fun !
+
+### Instructions for the teacher
+
+## Webservices
+
+**GET** Back is up (done)
+
+**POST** Word (not working)
+
+**PUT** Word (not working)
+
+**GET** Word (not working)
+
+**GET** All words (done)
+
+## Requirements
+
+- [x] Words are stored in a database (Sqlite)
+- [x] Use Riverpod for state management
+- [x] Use Dio for http requests
+- [x] Use Hive for local storage
+- [] Import and use custom fonts
+- [] Import and use images
