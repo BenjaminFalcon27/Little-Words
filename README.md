@@ -47,15 +47,15 @@ Thanks for reading, have fun !
 
 ## Webservices
 
-**GET** Back is up (done)
+- [x] **GET** Back is up (done)
 
-**POST** Word (not working)
+- [ ] **POST** Word (not working)
 
-**PUT** Word (not working)
+- [ ] **PUT** Word (not working)
 
-**GET** Word (not working)
+- [ ] **GET** Word (not working)
 
-**GET** All words (done)
+- [x] **GET** All words (done)
 
 ## Requirements
 
@@ -63,5 +63,5 @@ Thanks for reading, have fun !
 - [x] Use Riverpod for state management
 - [x] Use Dio for http requests
 - [x] Use Hive for local storage
-- [] Import and use custom fonts
-- [] Import and use images
+- [ ] Import and use custom fonts
+- [ ] Import and use images
